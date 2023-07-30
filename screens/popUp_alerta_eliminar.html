@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup de Alerta</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    }
+    .popup-container {
+        display: none; position: fixed;top: 0;left: 0;width: 100%;height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); z-index: 9999;
+    }
+
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .popup-content h2 {
+        margin-top: 0;
+        color: #FF0000;
+    }
+
+    .popup-content p {
+        margin-bottom: 20px;
+    }
+
+    .popup-content button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #FF0000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .popup-content button.cancelar {
+        background-color: #bbb;
+    }
+
+    .popup-content button:hover {
+        background-color: #FF3333;
+    }
+
+    .popup-content button.cancelar:hover {
+        background-color: #888;
+    }
+    </style>
+</head>
+<body onload="mostrarAlerta()">
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <h2>Confirmación de Eliminación</h2>
+            <p>¿Desea realmente eliminar este usuario?</p>
+            <button onclick="eliminarUsuario()">Eliminar</button>
+            <button onclick="cerrarAlerta()">Cancelar</button>
+        </div>
+    </div>
+
+    <script type="module" src="../Service/popUp_alerta_eliminar.js"></script>
+</body>
+</html>
