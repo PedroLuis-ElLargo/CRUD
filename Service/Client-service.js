@@ -11,13 +11,13 @@ const crearCliente = ( nombre, email) => {
     })
 }
 
-// //funcion para eliminar cliente
+//funcion para eliminar cliente
 
-// const borraRegistroCliente = ( id ) => {
-//     return fetch( `http://localhost:3000/perfil/${id}`, {
-//         method:"DELETE",
-//     })
-// }
+const borraRegistroCliente = ( id ) => {
+    return fetch( `http://localhost:3000/perfil/${id}`, {
+        method:"DELETE",
+    })
+}
 
 const detalleCliente = ( id ) => {
     return fetch( `http://localhost:3000/perfil/${ id }`).then( respuesta => respuesta.json())
@@ -37,7 +37,7 @@ const actualizarCliente = ( nombre, email, id) => {
 export const clientService = {
     ListaClientes,
     crearCliente,
-    //borraRegistroCliente,
+    borraRegistroCliente,
     detalleCliente,
     actualizarCliente,  
 }

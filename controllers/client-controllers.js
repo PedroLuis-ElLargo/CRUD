@@ -1,5 +1,4 @@
 import { clientService } from "../Service/Client-service.js";
-import { funcionEliminarUsuario } from "../Service/popUp_alerta_eliminar.js"
 
 // Función para crear una nueva fila de cliente en la tabla
 const CrearClienteLinea = ( nombre, email, id ) =>{
@@ -30,9 +29,9 @@ const CrearClienteLinea = ( nombre, email, id ) =>{
     const btnEliminarCliente = trClienteLinea.querySelector("button");
 
             btnEliminarCliente.addEventListener('click', function(){
+                
                 const idCliente = btnEliminarCliente.id;
-                funcionEliminarUsuario.mostrarAlerta();
-                funcionEliminarUsuario.borraRegistroCliente( idCliente ).then( respuesta => {
+                clientService.borraRegistroCliente( idCliente ).then( respuesta => {
                     location.reload();
                 }).catch((error) => alert("Ha ocurrido un error", error));
             });
